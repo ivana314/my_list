@@ -10,6 +10,7 @@
 </head>
 <body>
       
+      <div class="container">
         <nav>
         
         <div class="container nav-wrapper">
@@ -58,13 +59,29 @@
                 
             </div>
             
-        </div>
+        
 
+</div>     
 
 
  
-<script type="text/javascript" src="js/materialize.min.js"></script>
+
+<form action="{% url 'new_search' %}" method='post'>
+     {% csrf_token %}
+    <input type="text" name='search' placeholder='search'>
+    <button class="btn waves-effect waves-light" type="submit" name="action">Submit
+    <i class="material-icons right">send</i>
+    </button>
+        
+    
+</form>
+
+
 {% block content %} 
-{% endblock content %}      
+{% endblock content %}
+
+<script type="text/javascript" src="js/materialize.min.js"></script>
+
+</div> 
 </body>
 </html>
